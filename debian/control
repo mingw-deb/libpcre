@@ -1,22 +1,26 @@
 Source: mingw-w64-libpcre
 Priority: optional
 Maintainer: Tobias Schlemmer <keinstein@users.berlios.de>
-Build-Depends: debhelper (>= 9), autotools-dev
-Standards-Version: 3.9.8
+Build-Depends: debhelper (>= 9), autotools-dev,
+ 	       gcc-mingw-w64, g++-mingw-w64 (>= 1.7.1),
+	        readline-mingw-w64,
+		bzip2-mingw-w64,
+		libz-mingw-w64
+Standards-Version: 4.1.1
 Section: libs
-Homepage: <insert the upstream URL, if relevant>
+Homepage: http://www.pcre.org/
 #Vcs-Git: https://anonscm.debian.org/collab-maint/mingw-w64-libpcre.git
 #Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/mingw-w64-libpcre.git
 
-Package: mingw-w64-libpcre-dev
+Package: libpcre-mingw-w64-dev
 Section: libdevel
 Architecture: any
-Depends: mingw-w64-libpcreBROKEN (= ${binary:Version}), ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: libpcre1-mingw-w64 (= ${binary:Version}), ${misc:Depends}
+Description: A library that implements Perl 5-style regular expressions (mingw-w64 development files)
+ This package contains the development files.
 
-Package: mingw-w64-libpcreBROKEN
+Package: libpcre1-mingw-w64
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: A library that implements Perl 5-style regular expressions (mingw-w64 runtime)
+ This package contains the runtime libraries.

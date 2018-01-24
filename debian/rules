@@ -67,7 +67,16 @@ override_dh_auto_configure:
 		pushd build-$$target && \
 		$(EXECUTE) /usr/bin/prepare-winedllpath && \
 		$(EXECUTE) ../configure --prefix=/usr/$$target/ \
-				--build=$$target --host=$$target && \
+				--build=$$target \
+				--host=$$target \
+				--enable-unicode-properties \
+				--enable-jit \
+				--enable-pcre16 \
+				--enable-pcre32 \
+				--enable-pcregrep-libz \
+				--enable-pcregrep-libbz2 \
+				--enable-pcretest-libreadline \
+				&& \
 		popd || exit 1 ; \
 	done
 
