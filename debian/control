@@ -3,9 +3,9 @@ Priority: optional
 Maintainer: Tobias Schlemmer <keinstein@users.berlios.de>
 Build-Depends: debhelper (>= 9), autotools-dev,
  	       gcc-mingw-w64, g++-mingw-w64 (>= 1.7.1),
-	        readline-mingw-w64,
-		bzip2-mingw-w64,
-		libz-mingw-w64
+	       libreadline-mingw-w64-dev,
+	       libbz2-mingw-w64-dev,
+	       libz-mingw-w64-dev
 Standards-Version: 4.1.1
 Section: libs
 Homepage: http://www.pcre.org/
